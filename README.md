@@ -2,6 +2,8 @@
 
 ![npm-trends](docs/npm-trends.jpg)
 
+![frontend](docs/frontend.jpg)
+
 ## Zustand
 
 zustand 是典型的自顶向下的状态管理库，是 redux 的延伸与简化，基于 zustand 可以让代码有很好的高内聚的闭包特性。
