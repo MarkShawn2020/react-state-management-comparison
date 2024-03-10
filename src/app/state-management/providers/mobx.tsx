@@ -7,7 +7,7 @@ import { Shared } from "../shared";
 export const MobxPerson = observer(() => {
   return (
     <Shared
-      title={"Mobx"}
+      title={"Mobx (object, with observer wrapped)"}
       name={person.name}
       updateSecondName={(value) => person.updateSecondName(value)}
       ok

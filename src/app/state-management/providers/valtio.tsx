@@ -6,7 +6,7 @@ import { Shared } from "../shared";
 export const personStoreValtio = proxy(person);
 
 export const ValtioPerson = () => {
-  const { name, updateSecondName } = useSnapshot(personStoreValtio);
+  const snap = useSnapshot(personStoreValtio);
 
   return (
     <>
@@ -22,9 +22,23 @@ export const ValtioPerson = () => {
       {/*  updateSecondName={personStoreValtio.updateSecondName}*/}
       {/*/>*/}
 
+      {/*<div>*/}
+      {/*  <div>raw: {person.name}</div>*/}
+      {/*  <div>store: {personStoreValtio.name}</div>*/}
+      {/*  <div>snap: {snap.name}</div>*/}
+      {/*</div>*/}
+
       <Shared
-        title={"Valtio Normal Usage"}
-        name={name}
+        title={"Valtio (object, can't use snap functions)"}
+        name={snap.name}
+        updateSecondName={(value) => {
+          snap.updateSecondName(value);
+        }}
+      />
+
+      <Shared
+        title={"Valtio (object, can use proxy function)"}
+        name={snap.name}
         updateSecondName={(value) => {
           personStoreValtio.updateSecondName(value);
         }}

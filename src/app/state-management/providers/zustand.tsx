@@ -27,6 +27,8 @@ export const usePersonStandardZustand = create<IPerson>((set, get) => ({
       return get().firstName + " " + get().secondName;
     },
   },
+
+  // good point is, can cleanly export method
   updateSecondName(secondName: string) {
     set((state) => ({
       secondName,
@@ -44,7 +46,7 @@ export const ZustandPerson = () => {
   return (
     <>
       <Shared
-        title={"zustand (no action)"}
+        title={"zustand (object)"}
         name={person.name}
         updateSecondName={(value) => {
           person.updateSecondName(value);
@@ -52,7 +54,7 @@ export const ZustandPerson = () => {
       />
 
       <Shared
-        title={"zustand (computed)"}
+        title={"zustand (standard, via extra key)"}
         name={name}
         updateSecondName={updateSecondName}
         ok
