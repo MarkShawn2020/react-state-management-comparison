@@ -1,3 +1,5 @@
+import { makeAutoObservable } from "mobx";
+
 export class Person {
   firstName: string;
   secondName: string;
@@ -5,6 +7,9 @@ export class Person {
   constructor(firstName: string, secondName: string) {
     this.firstName = firstName;
     this.secondName = secondName;
+
+    // for mobx
+    makeAutoObservable(this);
   }
 
   get name() {

@@ -1,7 +1,7 @@
-import { JotaiPerson } from "./state-management/jotai";
-import { MobxPerson } from "./state-management/mobx";
-import { ValtioPerson } from "./state-management/valtio";
-import { ZustandPerson } from "./state-management/zustand";
+import { JotaiPerson } from "./state-management/providers/jotai";
+import { MobxPerson } from "./state-management/providers/mobx";
+import { ValtioPerson } from "./state-management/providers/valtio";
+import { ZustandPerson } from "./state-management/providers/zustand";
 
 export default function Home() {
   return (

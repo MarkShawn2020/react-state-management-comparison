@@ -1,13 +1,13 @@
 "use client";
 
 import { atom, useAtom, useAtomValue } from "jotai";
-import { Shared } from "./shared";
-import { person } from "./schema";
+import { Shared } from "../shared";
+import { person } from "../schema";
 
 export const personClassJotai = atom(person);
 
 export const JotaiPerson = () => {
-  const person = useAtomValue(personClassJotai);
+  const [person, setPerson] = useAtom(personClassJotai);
 
   return (
     <Shared
